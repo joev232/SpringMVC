@@ -21,15 +21,22 @@ import org.springframework.web.servlet.support.RequestContextUtils;
 
  
 @Controller
-public class MiController {
+public class MarianoController {
  
-	@RequestMapping("/bienvenido")
-	public ModelAndView holaMundo() {
+	@RequestMapping("/rajoy")
+    public String rajao(){ 
+    	return "rajoy";
+    			}
+    
  
-		String mensaje = "Vamos a darle caña al Spring";
-		return new ModelAndView("bienvenido", "mensaje", mensaje);
-	}
-	
-	
-	
+    @RequestMapping("/rajoyi")
+    public String rajaoDefecto(HttpServletRequest request,HttpServletResponse response){
+    	
+    	Locale locale=RequestContextUtils.getLocale(request);
+    	System.out.println(locale);
+    	
+       	
+    	RequestContextUtils.getLocaleResolver(request).setLocale(request, response, new Locale("en"));
+    	return "rajoyi";
+    }
 }

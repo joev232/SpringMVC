@@ -3,6 +3,7 @@ package curso.microforum.jee.spring;
 import java.util.ArrayList;
 import java.util.List;
  
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
  
 import org.springframework.stereotype.Controller;
@@ -14,11 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
  
  
 @Controller
-@RequestMapping("/alumno")
 public class AlumnoController {
  
     
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(path = "/alumno", method = RequestMethod.GET)
     public String newRegistration(ModelMap model) {
     	Alumno student = new Alumno();
         model.addAttribute("alumno", student);
@@ -26,7 +26,7 @@ public class AlumnoController {
     }
  
   
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(path = "/alumno", method = RequestMethod.POST)
     public String saveRegistration(@Valid Alumno student, BindingResult result, ModelMap model){
     	String msj = "exito";
     	
@@ -44,7 +44,7 @@ public class AlumnoController {
         return msj;
     }
  
- 
+    
     /*
      * 
      */
