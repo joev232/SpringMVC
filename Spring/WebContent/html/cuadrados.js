@@ -118,15 +118,33 @@ function leerclick(e){
 
 	function llamadaRest(tiempoTotal)
 	{
-	//xmlHttp.onreadystatechange = procesarEvento;
+	xmlHttp.onreadystatechange = procesarEvento;
 	xmlHttp.open('GET', '../registrar?tiempoTotal='+tiempoTotal, true); //indicamos como vamos a enviar los datos, en este caso con el metodo GET al archivo meses.php?num= el valor que le indiquemos en el textbox
 	xmlHttp.setRequestHeader('Accept', 'application/json');
 	xmlHttp.send(null);
 	alert("Has tardado web:"+tiempoTotal);
 	}
 
-//
-//function procesarEvento()
-//{
-//
-//}
+	function procesarEvento()
+	{
+	   
+	  if(xmlHttp.readyState==4) //ya hemos recibido respuesta del servidor
+	  {
+	      if(xmlHttp.status==200)// y el código de la cabecera http es bueno
+	          {
+	    	  	var objetoJSON=JSON.parse(xmlHttp.responseText);
+	    	  	alert(objetoJSON);
+	          }
+	      else
+	      {
+	          alert("Ha ocurrido un error"+ xmlHttp.status +":"+ xmlHttp.statusText);
+	      }
+	  }
+	  
+
+	}
+	function mostrarTiempo(tiempoTotal) {
+		
+		alert("has tardado"+tiempoTotal);
+		
+	}

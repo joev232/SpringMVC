@@ -65,8 +65,8 @@
 		<property name="password" value="password" />
 	</bean>
 	
-<!-- 	<bean id="regionDAOImpl" class="curso.microforum.jee.spring.dao.RegionDAOImpl"> -->
-<!-- 		<constructor-arg ref="dataSource" /> -->
-<!-- 	</bean> -->
+	<bean id="regionDAOImpl" class="curso.microforum.jee.spring.dao.RegionDAOImpl">
+		<constructor-arg ref="dataSource" />
+	</bean>
 	
 </beans>

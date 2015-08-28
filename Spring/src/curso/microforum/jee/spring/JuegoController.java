@@ -16,8 +16,8 @@ public class JuegoController {
 	@ResponseBody
     public ResponseEntity registro(@RequestParam(value="tiempoTotal") String tiempoTotal) {
         
-		System.out.println("tiempo :"+tiempoTotal);  
-        return new ResponseEntity(HttpStatus.OK);
+		System.out.println("tiempo  :"+tiempoTotal);  
+        return new ResponseEntity(tiempoTotal,HttpStatus.OK);
     }
 
 	
