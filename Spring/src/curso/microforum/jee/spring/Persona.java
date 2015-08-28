@@ -27,6 +27,12 @@ public class Persona {
 	public Persona() {
 		//super();
 	}
+	public Persona(String nombre, int edad, String descripcion) {
+		//super();
+		this.nombre = nombre;
+		this.edad = edad;
+		this.descripcion = descripcion;
+	}
 	
 
 }
