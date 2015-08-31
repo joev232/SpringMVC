@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Subimos un ficherito solo</title>
+</head>
+<body>
+<!--  enctype="multipart/form-data" atributo para enviar ficheros "http://localhost:8090/Spring/subirUnFichero" -->
+    <form action="../subirUnFichero" enctype="multipart/form-data" method="post">
+        Fichero: <input type="file" name="file" multiple="multiple"/><br />
+        Dale un Nombre (con extensión): <input type="text" name="name"><br /> <br /> 
+        <input type="submit" value="Súbelo"> Dale caña!
+    </form>
+   
+</body>
+</html>

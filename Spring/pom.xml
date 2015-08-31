@@ -68,7 +68,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		<!-- Para manipular XML, JSON y su pm (WS above all) -->
+		<!-- Para manipular XML, JSON y su pm (WS above all)  para serializar y deserializar  parsear-->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
