@@ -38,14 +38,12 @@ public class Controlador5 {
 	
 	@RequestMapping(path = "/calculaLetraDni", method = RequestMethod.GET)
 	@ResponseBody
-	public String calculaLetraDni (@RequestParam(value="dni", required=true) String dni) {	 
+	public String calculaLetraDni (@RequestParam(value="dni", required=true) String dni,HttpServletResponse respuesta) {	 
 		String letra = null;
 		
 		letra = obtenLetra(dni);
 		
 		return letra;
 	}
-
-	
 	
 }

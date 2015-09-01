@@ -1,6 +1,8 @@
 package curso.microforum.jee.spring.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -21,7 +23,7 @@ public class RegionDAOImpl implements RegionsDAO {
 	@Override
 	public List<Regions> list() {
 		String consulta = "SELECT * FROM REGIONS";//Esto debería estar aparte, sólo por motivos didácticos se incluye aquí
-		//RegionRowMapper para hacer un objeto de java
+		
 		List<Regions> l_regiones = this.jdbcTemplate.query(consulta, new RegionRowMapper());
 		
 		return l_regiones;
@@ -33,5 +35,15 @@ public class RegionDAOImpl implements RegionsDAO {
 		return null;
 	}
 
+
+	@Override
+	public void insert(Regions region) {
+		String sql = "INSERT INTO REGIONS (REGION_ID, REGION_NAME) VALUES (?, ?)";
+		
+		this.jdbcTemplate.update(sql, region.getId(), region.getName());
+			
+	}
+	
+	
 
 }

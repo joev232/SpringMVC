@@ -7,6 +7,9 @@ public class Regions {
 	
 	
 	
+	public Regions() {
+		
+	}
 	public Regions(long region_id, String l) {
 		super();
 		this.id = region_id;
