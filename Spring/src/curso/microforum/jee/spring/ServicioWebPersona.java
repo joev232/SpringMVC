@@ -13,7 +13,7 @@ public class ServicioWebPersona {
 	@ResponseBody
 	public ResponseEntity<Persona> personaJSON(){
 		Persona p=null;
-		p = new Persona("Pepe",33,"Mola","picture","pi");
+		p = new Persona("Pepe",33,"Mola","v","2222222");
 		return new ResponseEntity<Persona>(p,HttpStatus.OK);
 	}
 

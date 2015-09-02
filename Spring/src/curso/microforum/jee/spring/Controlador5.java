@@ -42,6 +42,7 @@ public class Controlador5 {
 		String letra = null;
 		
 		letra = obtenLetra(dni);
+		respuesta.setHeader("Access-Control-Allow-Origin", "*");
 		
 		return letra;
 	}
